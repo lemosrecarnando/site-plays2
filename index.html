@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minhas Playlists</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Minhas Playlists</h1>
+
+<div class="grid" id="playlistGrid"></div>
+
+<div class="fab" id="toggleForm">+</div>
+
+<div class="hiddenForm" id="hiddenForm">
+  <form id="addForm">
+    <label>Nome:</label>
+    <input type="text" id="name" required><br>
+
+    <label>Link da Playlist:</label>
+    <input type="text" id="link" required><br>
+
+    <label>Capa (opcional, URL):</label>
+    <input type="text" id="cover"><br>
+
+    <label>Senha:</label>
+    <input type="password" id="password" required><br>
+
+    <button type="submit">Adicionar / Editar Playlist</button>
+  </form>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "SUA_API_KEY",
+    authDomain: "SEU_PROJETO.firebaseapp.com",
+    projectId: "SEU_PROJETO",
+    storageBucket: "SEU_PROJETO.appspot.com",
+    messagingSenderId: "ID_MENSAGEM",
+    appId: "APP_ID"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
